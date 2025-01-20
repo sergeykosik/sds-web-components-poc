@@ -4,15 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDS Web Components POC</title>
-    <link rel="stylesheet" href="./node_modules/@sage/sds-web-components/dist/style.css"/>
+    <link rel="stylesheet" href="./src/sds-web-components.css" />
 </head>
 <body>
+
+    <sds-breadcrumbs>
+        <sds-breadcrumb-item href="#">
+                Breadcrumb 1
+              </sds-breadcrumb-item><sds-breadcrumb-item href="#">
+                Breadcrumb 2
+              </sds-breadcrumb-item><sds-breadcrumb-item href="#">
+                Breadcrumb 3
+              </sds-breadcrumb-item><sds-breadcrumb-item current="">
+                Current
+              </sds-breadcrumb-item>
+      </sds-breadcrumbs>
+
+      <sds-checkbox-group label="Test Checkbox label" required="true" size="M" orientation="horizontal">
+        <sds-checkbox value="1"> Test 1 </sds-checkbox>
+        <sds-checkbox value="2" checked="">
+          Test 2
+        </sds-checkbox>
+        <sds-checkbox value="3"> Test 3 </sds-checkbox>
+      </sds-checkbox-group>
 
     <sds-button importance="primary" size="M" href="" onclick="alert('You clicked the button!')" target="_self"
         type="button" value="">
         Button Content
     </sds-button>
 
-    <script type="module" src="./src/index.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@sage/sds-web-components": "./src/sds-web-components.js"
+          }
+        }
+      </script>
+    <script type="module">
+        import '@sage/sds-web-components';
+    </script>
 </body>
 </html>
