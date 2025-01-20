@@ -1,1 +1,1 @@
-import '@sage/sds-web-components/dist/index.js';
+import '@sage/sds-web-components';
